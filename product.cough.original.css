@@ -1,0 +1,49 @@
+
+
+/*BENELYNS CHESTY COUGH ORIGINAL*/
+
+.product1_view1_button2{
+    left: 380px;
+
+    top: 300px;
+}
+
+.product1_view2_button_popup1{
+    /* background: aquamarine; */
+
+	
+    left: 678px;
+    top: 190px;
+    width: 245px;
+    height: 140px;
+}
+
+	.product1_view2_popup1 { 
+		background-image:url("images/product_cough-original/detail_popup.png"); 
+		background-size:1024px 704px;
+	
+		/* background: transparent; */
+}
+
+.product1_view1_popup1{
+	background-image:url("images/product_cough-original/features_popup.png"); 
+		background-size:1024px 704px;
+}
+
+
+.product1_view2_button_return{
+    /* background: aqua; */
+    left: 211px;
+    width: 600px;
+    height: 150px;
+}
+
+	.product1_view1_button1{
+    /* background: aqua; */
+		
+	
+    width: 279px;
+    height: 65px;
+    left: 370px;
+    top: 580px;
+}

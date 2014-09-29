@@ -1,0 +1,28 @@
+	.product3_view1_button1{
+    /* background: black; */
+    left: 291px;
+    top: 205px;
+    width: 400px;
+    height: 190px;
+}
+	.product3_view1_button2{
+    /* background: coral; */
+    left: 751px;
+    top: 251px;
+    width: 170px;
+    height: 85px;
+}
+
+
+.product3_view2_button_return{
+    /* background: chartreuse; */
+    
+    left: 210px;
+    width: 600px;
+    height: 147px;
+}
+
+.product3_view1_popup1{
+    background-image:url("images/product_tyzorets/features_popup.png"); 
+    background-size:1024px 704px;
+}

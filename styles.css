@@ -1,0 +1,1039 @@
+/* Table of Content
+==================================================
+	#Reset & Basics
+	#Basic Styles
+    #iPad Landscape
+    #iPad Portrait
+	#Animations 
+    #Preloader
+*/
+
+* {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+     -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; 
+    -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
+    outline: none !important;
+}
+
+
+/* #Reset & Basics
+================================================== */
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}									
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+
+article, aside, figure, footer, header, nav, section, details, summary {display: block;}
+
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+img,
+object,
+embed {max-width: 100%;}
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+/* we use a lot of ULs that aren't bulleted. 
+	don't forget to restore the bullets within content. */
+ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {content: ''; content: none;}
+
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+input, select {vertical-align: middle;}
+
+pre {
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+}
+
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom;}
+.ie7 input[type="checkbox"] {vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+
+select, input, textarea {font: 99% sans-serif;}
+
+table {font-size: inherit; font: 100%;}
+
+small {font-size: 85%;}
+
+strong {font-weight: bold;}
+
+td, td img {vertical-align: top;} 
+
+/* Make sure sup and sub don't screw with your line-heights
+	gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+.clickable,
+label, 
+input[type=button], 
+input[type=submit], 
+input[type=file], 
+button {cursor: pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+button {width: auto; overflow: visible;}
+ 
+/* scale images in IE7 more attractively */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+/* prevent BG image flicker upon hover */
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+
+/* let's clear some floats */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
+.clearfix:after { clear: both; }  
+.clearfix { zoom: 1; }  
+
+/* #Basic Styles
+================================================== */
+
+body
+{
+    margin:0;
+    padding:0;
+    background:#000;
+    color:#fff;
+    font-family:Helvetica;
+    overflow-y: hidden;
+}
+
+h1, h2, h3, h4{
+    margin-bottom:20px;
+	font-size:1.5em;
+}
+
+p{
+    margin-bottom:20px;
+}
+
+#preloader_container { display:none; }
+
+.content{
+    position:absolute;
+    float:left;
+}
+
+ul { list-style:disc; margin-left:30px; }
+ul li { line-height:1.4em; }
+
+.opacity { opacity:0;  }
+
+/* popup */
+body .ui-content { font-size:1.5em; border-radius:0; }
+.popup_content {overflow:hidden; display:block; }
+
+.popup{
+	z-index:10;	
+}
+
+#overlay{
+	z-index:5;	
+	width:100%;
+	height:100%;
+	background-image:url("images/overlay-bg.png");
+	position:absolute;	
+	opacity:0;
+	-webkit-transition:all 0.5s ease;
+	display:none;
+	top:0;
+	left:0;
+}
+
+#overlay.show{
+	opacity:1;
+	display:block;
+}
+
+.popup_down{ top:0px!important; }
+
+.popup { width:1024px; height:704px; position:absolute; top:-1000px; left:0px; -webkit-transition:top 0.5s ease; background-repeat:no-repeat; background-position:center; }
+.popup_close { width:50px; height:50px;	display:block; overflow:hidden; position: absolute; left: 900px; top: 50px; }
+
+
+/* logo */
+
+.logo { 
+	position:absolute;
+	top: 620px;
+	left: 32px;
+	z-index:1;
+	display:block;
+	overflow:hidden;
+	height:53px;
+	width:147px;
+}
+
+/* nav buttons */
+
+.home-button{
+	position:absolute;
+	top: 107px;
+	left: 32px;
+	z-index:1;
+	display:block;
+	overflow:hidden;
+	height:76px;
+	width:76px;
+}
+
+.menu-button { 
+	position:absolute;
+	top: 24px;
+	left: 32px;
+	z-index:1;
+	display:block;
+	overflow:hidden;
+	height:76px;
+	width:76px;
+}
+
+.range-button { 
+	position:absolute;
+	top: 581px;
+	left: 816px;
+	z-index:1;
+	display:block;
+	overflow:hidden;
+	height:109px;
+	width:78px;
+}
+
+.ai-button { 
+	position:absolute;
+	top: 581px;
+	left: 903px;
+	z-index:1;
+	display:block;
+	overflow:hidden;
+	height:109px;
+	width:78px;
+}
+
+.pi-button { 
+	position:absolute;
+	top: 581px;
+	left: 733px;
+	z-index:1;
+	display:block;
+	overflow:hidden;
+	height:109px;
+	width:78px;
+}
+
+
+/* slide-out menu */
+
+.menu-overlay{
+	background-color:#fff;
+	text-align:center;
+	z-index:10;
+	-webkit-transition:all 0.5s ease;
+	box-shadow:0px 0px 20px #555;
+	position:relative;
+	opacity:0;
+}
+
+.menu-overlay.menu-overlay-open{
+}
+
+.menu-close-button{
+	padding:10px;
+	display:block;
+	width:230px;
+	text-align:right;
+	text-decoration:none;
+	color:#6d747a;
+	font-weight:bold;
+}
+
+.menu-close-button p {
+	float:left;
+	padding:15px 20px 0 0;	
+}
+
+
+.menu-links{
+	width:225px;	
+	margin:0 auto;
+}
+
+.menu-link{
+	overflow:hidden;
+	display:block;
+	float:left;
+	width:150px;
+	height:103px;
+	margin-right:10px;
+	margin-bottom:15px;
+	margin-left:35px;
+	border:2px solid #6d747a;
+	border-radius:10px;
+	text-align:center;
+}
+
+.menu-thumbnail{
+	width:150px;
+	height:103px;
+}
+
+.menu-button {  }
+.menu-overlay{ width:250px; height:704px; left:-350px; z-index:100; }
+.menu-overlay.menu-overlay-open{ left:0px; 	opacity:1; }
+
+/* button */
+
+.arrow-right, .arrow-left{ 
+	position:absolute;
+	z-index:1;
+	display:block;
+	overflow:hidden;
+	height:76px;
+	width:76px;
+}
+
+.plus{ 
+	position:absolute;
+	z-index:1;
+	display:block;
+	overflow:hidden;
+	height:76px;
+	width:76px;
+}
+
+
+.element img.faded{
+	opactity:0.4!important;	
+}
+
+/* animated bg 
+
+#background{
+	width:1024px;
+	height:704px;
+	position:absolute;
+	top:0;
+	left:0;
+	overflow:hidden;
+}
+
+
+#background img{
+	width:880px;
+	height:880px;	
+	position:absolute;
+	top:0;
+	left:0;
+	display:block;
+	
+	-webkit-animation-duration: 60s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction:alternate;
+
+}
+
+#background .purple{ top:-50px; left:-270px; -webkit-animation-name: purple; }
+#background .light-blue{ top:-260px; left:-330px; -webkit-animation-name: light-blue; -webkit-animation-delay: 0s; }
+#background .dark-blue{ top:-210px; left:440px; -webkit-animation-name: light-blue; -webkit-animation-delay: 0s; }
+#background .orange{ top:220px; left:230px; -webkit-animation-name: orange; -webkit-animation-delay: 0s; }
+#background .green{ top:210px; left:0px; -webkit-animation-name: green; -webkit-animation-delay: 0s; }
+
+@-webkit-keyframes purple{
+    0% {
+        -webkit-transform: translateX(0px);	
+    }
+    100% {
+        -webkit-transform: translateX(125px);	
+    }
+}
+
+@-webkit-keyframes light-blue{
+    0% {
+        -webkit-transform: translateX(0px);	
+    }
+    100% {
+        -webkit-transform: translateX(250px);	
+    }
+}
+
+@-webkit-keyframes dark-blue{
+    0% {
+        -webkit-transform: translateX(0px);	
+    }
+    100% {
+        -webkit-transform: translateX(250px);	
+    }
+}
+
+@-webkit-keyframes orange{
+    0% {
+        -webkit-transform: translateX(0px);	
+    }
+    100% {
+        -webkit-transform: translateX(-100px);	
+    }
+}
+
+
+@-webkit-keyframes green{
+    0% {
+        -webkit-transform: translateX(0px);	
+    }
+    100% {
+        -webkit-transform: translateX(125px);	
+    }
+}
+
+#background_all{
+	width:1024px;
+	height:704px;
+	position:absolute;
+	top:0;
+	left:0;
+	overflow:hidden;
+}
+
+#background_all:before
+{
+	content: "";
+	position: absolute;
+	width: 200%;
+	height: 200%;
+	top: -75%;
+	left: -75%;
+	z-index: -1;
+	background: url(images/background/all.png) 0 0 repeat;
+	-webkit-animation: rotatingbg 240s linear infinite ;
+	opacity:0.5;
+}
+
+#background_all:after
+{
+	content: "";
+	position: absolute;
+	width: 200%;
+	height: 200%;
+	top: -25%;
+	left: -25%;
+	z-index: -1;
+	background: url(images/background/all.png) 0 0 repeat;
+	-webkit-animation: rotatingbg 240s linear infinite ;
+	opacity:0.5;
+}
+
+
+@-webkit-keyframes rotatingbg {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(-360deg);
+    }
+}
+*/
+
+
+
+/* #iPad Landscape
+================================================== */
+
+@media only screen and (min-width: 769px)  {
+                    
+    #page1.page, #page2.page
+    , #page3.page
+    , #page4.page, #page5.page
+    , #page6.page
+    , #page7.page
+    , #page7-1.page
+    , #page8.page, #page9.page, #page10.page, #page11.page, #page12.page, #page13.page, #page14.page, #page15.page, #page16.page, #page17.page{   
+        width:1024px;
+        height:704px;
+        overflow:hidden;
+		background-size:1024px 704px;
+		background-repeat:no-repeat;
+		background: transparent;
+    }
+	
+	.content{
+        width:1024px;
+        height:704px;
+        overflow:hidden;
+		background-size:1024px 704px;
+		background-repeat:no-repeat;
+
+	}
+
+	@-webkit-keyframes animatedsnow {
+		from { background-position: 0% 0%; }
+		to { background-position: 0% -200%; }
+	}
+	
+
+	#page1.page, #page2.page, #page3.page, #page4.page, #page16.page{
+		background-image:url(images/bg_1.jpg);
+		background-size:1024px 704px;
+		background-repeat:no-repeat;
+	}
+
+	#page5.page, #page6.page, #page8.page, #page9.page, #page10.page, #page11.page, #page12.page, #page13.page, #page14.page, #page15.page{
+		background-image:url(images/bg_2.jpg); 
+		background-size:1024px 704px;
+		background-repeat:no-repeat;
+	}
+
+	#page7.page, #page17.page{
+		background-image:url(images/bg_3.jpg); 
+		background-size:1024px 704px;
+		background-repeat:no-repeat;
+	}
+	
+	.page{
+		background-size:1024px 704px;
+	}
+
+	
+
+	#page5.page { background-image:url(images/product_cold_and_flu/home.jpg); }
+
+	/*
+	#page6.page { background-image:url(images/page-6.jpg); }
+	*/
+	#page6.page { background-image:url(images/product_sinutab/home.jpg); }
+	
+	#page7.page { 
+		background-image:url(images/product_cough-original/home.jpg); 
+		background-size:1024px 704px;
+		background-repeat:no-repeat;
+	}
+	#page7-1.page { 
+		background-image:url(images/product_cough-original/detail.jpg); 
+		background-size:1024px 704px;
+		background-repeat:no-repeat;
+	} /*CHESTY*/
+
+/*
+	
+	*/
+	
+	#page8.page { background-image:url(images/product_sinutab/details.jpg); }
+	/*#page9.page { background-image:url(images/page-9.jpg); }*/
+	
+	/*#page10.page { background-image:url(images/page-10.jpg); }*/
+	/*#page11.page { background-image:url(images/page-11.jpg); }*/
+	/*#page12.page { background-image:url(images/page-12.jpg); }*/
+	
+/*
+	#page13.page { background-image:url(images/page-13.jpg); }
+	#page14.page { background-image:url(images/page-14.jpg); }
+	*/
+		#page13.page { background-image:url(images/product_tyzorets/home.jpg); }
+		#page14.page { background-image:url(images/product_tyzorets/did_you_know.jpg); }
+
+
+
+	
+	/*#page15.page { background-image:url(images/page-15.jpg); }*/
+	#page17.page { background-image:url(images/page-17.jpg); }
+	
+/*
+	#page5 .content{ background-image:url(images/page-5.png); }
+	#page6 .content{ background-image:url(images/page-6.png); }
+	#page7 .content{ background-image:url(images/page-7.png); }
+	#page8 .content{ background-image:url(images/page-8.png); }
+	#page9 .content{ background-image:url(images/page-9.png); }
+	#page10 .content{ background-image:url(images/page-10.png); }
+	#page11 .content{ background-image:url(images/page-11.png); }
+	#page12 .content{ background-image:url(images/page-12.png); }
+	#page13 .content{ background-image:url(images/page-13.png); }
+	#page14 .content{ background-image:url(images/page-14.png); }
+	#page15 .content{ background-image:url(images/page-15.png); }
+	#page17 .content{ background-image:url(images/page-17.png); }
+*/
+	
+	.element { position: absolute; display:block; overflow:hidden; }
+
+	/* page 1 */
+	.element_1_1 { width:786px; height:767px; left:120px; top:-25px; }
+	.element_1_2 { width:254px; height:274px; right:0; top:10px; }
+
+	/* page 2 */
+	.element_2_1 { width:617px; height:812px; left:200px; top:-170px; }
+	.element_2_2 { width:591px; height:50px; left:200px; bottom:10px; }
+	.element_2_3 { left:903px; top:300px; }
+
+	/* page 3 */
+	.element_3_1 { width:283px; height:284px; left:45px; top:340px; }
+	.element_3_2 { width:283px; height:284px; left:258px; top:170px; }
+	.element_3_3 { width:283px; height:284px; left:490px; top:340px; }
+	.element_3_4 { width:283px; height:284px; left:708px; top:170px; }
+	
+	.element_3_5 { width:628px; height:684px; left:200px; top:-510px; }
+	.element_3_6 { width:648px; height:860px; left:200px; top:-450px; }
+	.element_3_6-close { width: 78px; height: 78px; left: 570px;	top: 500px;	}
+	.element_3_6-learnmore { width: 298px; height: 78px; left: 150px; top: 690px; }
+
+	/* page 4 */
+	.element_4_1 { width:115px; height:112px; left:19px; top:200px; }
+	.element_4_2 { width:115px; height:112px; left:19px; top:300px; }
+	.element_4_3 { width:115px; height:112px; left:19px; top:400px; }
+	.element_4_4 { width:115px; height:112px; left:19px; top:500px; }
+	
+	.section-button img { -webkit-transition: opacity 0.25s ease-in-out; }
+
+	.element_4_5 { width:628px; height:768px; left:200px; top:-130px; }
+	.element_4_6 { width:240px; height:247px; left:760px; top:50px; }
+	.element_4_7 { width:240px; height:247px; left:760px; top:290px; }
+	
+	.head_popup_button { width: 78px; height: 78px; left: 220px; top: 360px;	}
+	.head_popup { background-image:url("images/page4/head-popup.png"); background-size:1024px 704px; }
+	.head_popup_close { width: 90px; height: 90px; left: 885px; top: 35px; }
+
+	/* page 5 */
+	.element_5_1 { width:617px; height:812px; left:200px; top:-650px; }
+	.element_5_2 { width:574px; height:344px; left:220px; top:200px; }
+	.element_5_3 { width:226px; height:273px; right:-40px; top:-20px; -webkit-transform-origin: 0% 0%!important; }
+
+
+	.page5_popup_button { left:180px; top:330px; }
+
+
+	
+
+
+	/*POP_BG*/
+
+
+
+	.page5_popup { 
+		background-image:url("images/page5/flu_content_1.png"); 
+		background-size:1024px 704px;
+	}
+
+	.page5_popup_2 { 
+		background-image:url("images/page5/flu_content_2.png"); 
+		background-size:1024px 704px; 
+	}
+	
+	.page5_popup_2_close { width: 90px; height: 90px; left: 885px; top: 35px; }
+	.page5_popup_2_promo { width: 490px; height: 390px; left: 290px; top: 175px; }
+	
+	
+
+	.page5_popup_button2_div{
+    /* background: black; */
+    width: 450px;
+    height: 380px;
+    /* position: relative; */
+    /* left: -450px; */
+    /* top: -270px; */
+    /* z-index: 1000; */
+}
+
+	.page5_popup_close { width: 90px; height: 90px; left: 888px; top: 41px; /* background: aqua; */}
+	.page5_popup_fom { width: 190px; height: 190px; left: 735px; top: 435px; }
+
+
+	
+
+/*
+	.page5_popup_3 { background-image:url("images/page5/popup_3.png"); background-size:1024px 704px; }
+	*/
+	.page5_popup_3_close { width: 90px; height: 90px; left: 885px; top: 35px; }
+
+	/* page 6 */
+	.element_6_1 { width:617px; height:812px; left:200px; top:-650px; }
+	.element_6_2 { width:417px; height:245px; left:80px; top:340px; }
+	.element_6_3 { width:226px; height:273px; right:-40px; top:-20px; -webkit-transform-origin: 0% 0%!important; }
+	.element_6_4 { width:416px; height:245px; left:520px; top:270px; }
+	.element_6_5 { width:258px; height:113px; left:130px; top:190px; }
+
+	/*
+	.page6_popup_1 { background-image:url("images/page6/popup_1.png"); background-size:1024px 704px; }
+	.page6_popup_2 { background-image:url("images/page6/popup_2.png"); background-size:1024px 704px; }
+	
+	.page6_popup_media { background-image:url("images/page6/popup_media.png"); background-size:1024px 704px; }
+	.page6_popup_materials { background-image:url("images/page6/popup_materials.png"); background-size:1024px 704px; }
+
+	.page6_popup_1_button { left:75px; top:205px; }
+	.page6_popup_2_button { left:470px; top:390px; }
+	.page6_popup_media_button { width: 190px; height: 190px; left: 735px; top: 435px; }
+	.page6_popup_materials_button { width: 190px; height: 190px; left: 735px; top: 435px; }
+*/
+	/* page 7 */
+	.element_7_1 { width:617px; height:812px; left:200px; top:-650px; } /* tab */
+	.element_7_2 { width:700px; height:374px; left:60px; top:190px; } /* content */
+	.element_7_3 { width:226px; height:273px; right:-40px; top:-20px; } /* banner */
+	.element_7_4 { width:584px; height:30px; left:205px; top:620px; } /* references */
+
+	/* page 8 */
+	.element_8_1 { width:617px; height:812px; left:200px; top:-650px; } /* tab */
+
+	.element_8_2 { width:403px; height:187px; left:105px; top:160px; } /* box */
+	.element_8_3 { width:403px; height:187px; left:520px; top:160px; } /* box */
+	.element_8_4 { width:403px; height:187px; left:105px; top:355px; } /* box */
+	.element_8_5 { width:403px; height:187px; left:520px; top:355px; } /* box */
+
+	.element_8_6 { width:258px; height:75px; left:370px; top:570px; } /* pill */
+	.page8_popup_1_button { left:330px; top:555px; } /* plus */
+	/*
+	.page8_popup_1 { background-image:url("images/page8/popup_1.png"); background-size:1024px 704px; }
+*/
+	.element_8_7 { width:226px; height:273px; right:-40px; top:-20px; } /* banner */
+
+	/* page 9 */
+	.element_9_1 { width:617px; height:812px; left:200px; top:-650px; }
+	.element_9_2 { width:416px; height:245px; left:75px; top:250px; }
+	.element_9_3 { width:416px; height:245px; left:500px; top:250px; }
+	.element_9_4 { width:226px; height:273px; right:-40px; top:-20px; } /* banner */
+	.element_9_5 { left:925px; top:300px; }
+	.element_9_6 { left:25px; top:300px; }
+
+	.page9_popup_1_button { left:452px; top:213px; } /* plus */
+	/*
+	.page9_popup_1 { background-image:url("images/page9/popup_1.png"); background-size:1024px 704px; }
+*/
+	/* page 10 */
+	.element_10_1 { width:617px; height:812px; left:200px; top:-650px; }
+	.element_10_2 { width:391px; height:230px; left:240px; top:160px; }
+	.element_10_3 { width:391px; height:230px; left:240px; top:400px; }
+	.element_10_4 { width:226px; height:273px; right:-40px; top:-20px; } /* banner */
+	.element_10_5 { left:925px; top:300px; }
+	.element_10_6 { width:120px; height:399px; left:640px; top:160px; }
+	.element_10_7 { left:25px; top:300px; }
+
+	.page10_popup_1_button { left:750px; top:210px; } /* plus */
+	/*
+	.page10_popup_1 { background-image:url("images/page10/popup_1.png"); background-size:1024px 704px; }
+*/
+	/* page 11 */
+	.element_11_1 { width:617px; height:812px; left:200px; top:-650px; z-index: 1; }
+	.element_11_2 { width:354px; height:423px; left:75px; top:155px; }
+	.element_11_3 { width:404px; height:307px; left:520px; top:170px; }
+	.element_11_4 { width:226px; height:273px; right:-40px; top:-20px; } /* banner */
+	.element_11_5 { left:925px; top:300px; }
+	.element_11_6 { width:5px; height:494px; left:473px; top:150px; }
+	.element_11_7 { left:25px; top:300px; }
+
+	.page11_popup_1_button { left:448px; top:275px; } /* plus */
+	/*
+	.page11_popup_1 { background-image:url("images/page11/popup_1.png"); background-size:1024px 704px; }
+*/
+	/* page 12 */
+	.element_12_1 { width:617px; height:812px; left:200px; top:-650px; z-index: 1; }
+	.element_12_2 { width:414px; height:343px; left:75px; top:170px; }
+	.element_12_3 { width:441px; height:377px; left:515px; top:170px; }
+	.element_12_4 { width:226px; height:273px; right:-40px; top:-20px; } /* banner */
+	.element_12_5 { left:925px; top:300px; }
+	.element_12_6 { width:5px; height:494px; left:500px; top:150px; }
+	.element_12_7 { left:25px; top:300px; }
+	.element_12_8 { left:925px; top:300px; }
+
+	.page12_popup_1_button { left:464px; top:215px; } /* plus */
+	/*
+	.page12_popup_1 { background-image:url("images/page12/popup_1.png"); background-size:1024px 704px; }
+*/
+	/* page 13 */
+	.element_13_1 { width:617px; height:812px; left:200px; top:-650px; } /* tab */
+	.element_13_2 { width:578px; height:425px; left:220px; top:190px; } /* content */
+	.element_13_3 { width:226px; height:273px; right:-40px; top:-20px; } /* banner */
+
+	/* page 14 */
+	.element_14_1 { width:617px; height:812px; left:200px; top:-650px; }
+	.element_14_2 { width:241px; height:432px; left:250px; top:160px; }
+	.element_14_3 { width:205px; height:433px; left:500px; top:160px; }
+	.element_14_4 { width:226px; height:273px; right:-40px; top:-20px; } /* banner */
+	.element_14_5 { left:925px; top:300px; }
+
+	.page14_popup_1_button { left:468px; top:250px; } /* plus */
+	/*
+	.page14_popup_1 { background-image:url("images/page14/popup_1.png"); background-size:1024px 704px; }
+*/
+	/* page 15 */
+	.element_15_1 { width:617px; height:812px; left:200px; top:-650px; }
+	.element_15_2 { width:246px; height:440px; left:250px; top:160px; }
+	.element_15_3 { width:212px; height:441px; left:500px; top:160px; }
+	.element_15_4 { width:226px; height:273px; right:-40px; top:-20px; } /* banner */
+	.element_15_5 { left:925px; top:300px; }
+	.element_15_6 { left:25px; top:300px; }
+
+	.page15_popup_1_button { left:478px; top:250px; } /* plus */
+	/*
+	.page15_popup_1 { background-image:url("images/page15/popup_1.png"); background-size:1024px 704px; }
+*/
+	/* page 16 */
+	.element_16_1 { width:1024px; height:688px; left:0; top:0; }
+	
+	.pi_button_range { height:125px; width:100px; display:block; position:absolute;  }
+	
+	.pi_popup_1_open { left: 885px; top: 60px; }
+	.pi_popup_2_open { left: 765px; top: 60px; }
+	.pi_popup_3_open { left: 275px; top: 60px; }
+	.pi_popup_4_open { left: 290px; top: 375px; width:75px; }
+	.pi_popup_5_open { left: 500px; top: 375px; width:75px; }
+	.pi_popup_6_open { left: 425px; top: 375px; width:75px; }
+	.pi_popup_7_open { left: 350px; top: 375px; width:75px; }
+
+	/* page 17 */
+	.element_17_1 { width:617px; height:812px; left:200px; top:-650px; }
+	.element_17_2 { width:308px; height:45px; left:130px; top:180px; }
+	.element_17_3 { width:526px; height:282px; left:130px; top:240px; }
+	.element_17_4 { width:222px; height:285px; left:700px; top:240px; }
+	.element_17_5 { width:523px; height:49px; left:130px; top:540px; }
+
+	/* pi popups */
+	.pi_popup_next { width:74px; height:74px; display:block; overflow:hidden; position: absolute; left: 925px; top: 315px; }
+	.pi_popup_prev { width:74px; height:74px; display:block; overflow:hidden; position: absolute; left: 15px; top: 315px; }
+
+	.pi_popup_1 { background-image:url("images/pi_popup_1.png"); background-size:1024px 704px; }
+	.pi_popup_2 { background-image:url("images/pi_popup_2.png"); background-size:1024px 704px; }
+	.pi_popup_3 { background-image:url("images/pi_popup_3.png"); background-size:1024px 704px; }
+	.pi_popup_4 { background-image:url("images/pi_popup_4.png"); background-size:1024px 704px; }
+	.pi_popup_5 { background-image:url("images/pi_popup_5.png"); background-size:1024px 704px; }
+	.pi_popup_6 { background-image:url("images/pi_popup_6.png"); background-size:1024px 704px; }
+	.pi_popup_7 { background-image:url("images/pi_popup_7.png"); background-size:1024px 704px; }
+	
+
+}
+/* #iPad Portrait
+================================================== */
+
+@media only screen and (min-width: 0px) and (max-width: 959px) {
+                    
+    .content{   
+		display:none;
+    }
+
+}    
+
+
+                                
+/* #Animations
+================================================== */
+
+.panel {
+	float: left;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	font-size: .8em;
+
+	-webkit-perspective: 600px;
+		-moz-perspective: 600px;
+			perspective: 600px;
+}
+	
+.panel .front {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 900;
+	width: inherit;
+	height: inherit;
+
+	-webkit-transform: rotateX(0deg) rotateY(0deg);
+		 -moz-transform: rotateX(0deg) rotateY(0deg);
+					transform: rotateX(0deg) rotateY(0deg);
+
+	-webkit-transform-style: preserve-3d;
+		 -moz-transform-style: preserve-3d;
+					transform-style: preserve-3d;
+
+	-webkit-backface-visibility: hidden;
+		 -moz-backface-visibility: hidden;
+					backface-visibility: hidden;
+
+	/* -- transition is the magic sauce for animation -- */
+	-webkit-transition: all .4s ease-in-out;
+					transition: all .4s ease-in-out;
+}
+.panel.flip .front {
+	z-index: 900;
+
+	-webkit-transform: rotateY(180deg);
+		 -moz-transform: rotateY(180deg);
+					transform: rotateY(180deg);
+}
+
+.panel .back {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 800;
+	width: inherit;
+	height: inherit;
+
+	-webkit-transform: rotateY(-180deg);
+		 -moz-transform: rotateY(-179deg); /* setting to 180 causes an unnatural-looking half-flip */
+					transform: rotateY(-179deg);
+
+	-webkit-transform-style: preserve-3d;
+		 -moz-transform-style: preserve-3d;
+					transform-style: preserve-3d;
+
+	-webkit-backface-visibility: hidden;
+		 -moz-backface-visibility: hidden;
+					backface-visibility: hidden;
+
+	/* -- transition is the magic sauce for animation -- */
+	-webkit-transition: all .4s ease-in-out;
+					transition: all .4s ease-in-out;
+}
+
+.panel.flip .back {
+	z-index: 1000;
+
+	-webkit-transform: rotateX(0deg) rotateY(0deg);
+		 -moz-transform: rotateX(0deg) rotateY(0deg);
+					transform: rotateX(0deg) rotateY(0deg);
+
+}
+
+                                
+/* fade in */ 
+                                
+.fade_2s{
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */                                  
+    opacity:0;
+    animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+}
+
+
+
+/* delays */ 
+
+ 
+.delay_025s{ -webkit-animation-delay: 0.25s; }
+
+.delay_05s{ -webkit-animation-delay: 0.5s; }
+
+.delay_075s{ -webkit-animation-delay: 0.75s; }
+                                
+.delay_1s{ -webkit-animation-delay: 1s; }
+                                
+.delay_125s{ -webkit-animation-delay: 1.25s; }
+                                
+.delay_15s{ -webkit-animation-delay: 1.5s; }                                
+
+.delay_175s{ -webkit-animation-delay: 1.75s; }      
+                                
+.delay_2s{ -webkit-animation-delay: 2s; }
+                                
+.delay_225s{ -webkit-animation-delay: 2.25s; }                               
+                                
+.delay_25s{ -webkit-animation-delay: 2.5s; }
+
+.delay_275s{ -webkit-animation-delay: 2.75s; }
+                                
+.delay_3s{ -webkit-animation-delay: 3s; }
+                                
+.delay_35s{ -webkit-animation-delay: 3.5s; }
+                                    
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+     
+
+/* #Preloader
+================================================== */
+#preloader {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:#fff; /* change if the mask should have another color then white */
+    z-index:99; /* makes sure it stays on top */
+}
+
+#status {
+    width:200px;
+    height:200px;
+    position:absolute;
+    left:50%; /* centers the loading animation horizontally one the screen */
+    top:50%; /* centers the loading animation vertically one the screen */
+    background-image:url(images/status.gif); /* path to your loading animation */
+    background-repeat:no-repeat;
+    background-position:center;
+    margin:-100px 0 0 -100px; /* is width and height divided by two */
+}

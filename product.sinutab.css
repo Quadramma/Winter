@@ -1,0 +1,50 @@
+
+
+.product4_view1_button1{
+    left: 200px;
+    top: 300px;
+}
+.product4_view1_button2{
+    /* background: chocolate; */
+    left: 378px;
+    top: 543px;
+    width: 268px;
+    height: 60px;
+}
+
+.product4_view2_button1{
+    left: 360px;
+    top: 460px;
+    width: 190px;
+    height: 90px;
+    /* background: aquamarine; */
+}
+.product4_view2_button2{
+    /* background: chocolate; */
+    left: 578px;
+    top: 243px;
+    width: 348px;
+    height: 300px;
+}
+
+.product4_view2_button_return{
+    /* background: black; */
+    left: 210px;
+    width: 605px;
+    height: 150px;
+}
+
+.product4_view1_popup1{
+    background-image:url("images/product_sinutab/features_popup.png"); 
+    background-size:1024px 704px;
+}
+
+.product4_view2_popup1{
+    background-image:url("images/product_sinutab/did_you_know_popup.png"); 
+    background-size:1024px 704px;
+}
+
+.product4_view2_popup2{
+    background-image:url("images/product_sinutab/details_picture_popup.png"); 
+    background-size:1024px 704px;
+}

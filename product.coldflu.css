@@ -1,0 +1,17 @@
+
+
+
+
+.product2_view1_button1 { left:180px; top:330px; }
+.product2_view1_button2 { width: 490px; height: 390px; left: 290px; top: 175px; }
+
+.product2_view1_popup1 { 
+		background-image:url("images/product_cold_and_flu/features_popup1.png"); 
+		background-size:1024px 704px;
+}
+.product2_view1_popup2 { 
+	background-image:url("images/product_cold_and_flu/features_popup2.png"); 
+	background-size:1024px 704px; 
+}
+.product2_view1_popup1_close { width: 90px; height: 90px; left: 885px; top: 35px; }
+.product2_view1_popup2_close { width: 90px; height: 90px; left: 885px; top: 35px; }

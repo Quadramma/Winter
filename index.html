@@ -1,0 +1,712 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Winter Wellness</title> 
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel='stylesheet' href='styles.css'>
+    <link rel='stylesheet' href='product.cough.original.css'>
+    <link rel='stylesheet' href='product.tyrozets.css'>
+    <link rel='stylesheet' href='product.sinutab.css'>
+    <link rel='stylesheet' href='product.coldflu.css'>
+    
+    <link rel='stylesheet' href='animate_2.css'>
+    <link rel="stylesheet" href="js/jquery.mobile-1.2.0.min.css" />
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/jquery.mobile-1.2.0.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.cycle.all.js"></script>
+    <script src="js/winter-meds.js"></script>
+    
+   <!-- Preloader -->
+    <script type="text/javascript">
+		$(window).load(function() { // makes sure the whole site is loaded
+			$("#status").fadeOut(); // will first fade out the loading animation
+			$("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.
+		})
+    </script>
+    <script>
+	
+       /* $(document).off('swipeleft').on('swipeleft', '[data-role="page"]', function(event){    
+            if($(this).attr('id') == 'article2') {
+                event.preventDefault();
+                return false;
+            }
+            var nextpage = $.mobile.activePage.next('[data-role="page"]');
+            // swipe using id of next page if exists
+            if (nextpage.length > 0) {
+                $.mobile.changePage(nextpage, {transition: "slide", reverse: false}, true, true);
+            }
+            event.handled = true;
+			
+            
+        });
+        
+        $(document).off('swiperight').on('swiperight', '[data-role="page"]', function(event){   
+            var prevpage = $(this).prev('[data-role="page"]');
+            if (prevpage.length > 0) {
+                $.mobile.changePage(prevpage, {transition: "slide", reverse: true}, true, true);
+            }
+            event.handled = true;
+			
+        });*/
+		
+    </script>
+    </head> 
+
+<body> 
+    
+    
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>  
+
+
+
+<div data-role="page" id="page1" class="page">
+	<div class="content">
+
+		<div class="element element_1_1 animated zoomIn delay_05s"><img class="" src="images/page1/spinner.png" usemap="#Map" /> </div>
+
+        <map name="Map">
+          <area shape="poly" coords="259,341,303,279,387,248,385,152,309,165,249,197,198,245,166,312" href="#page2" alt="button1">
+          <area shape="poly" coords="399,247,397,152,470,164,531,194,581,243,620,309,534,340,481,276" href="#page6" alt="button2">
+          <area shape="poly" coords="534,354,623,325,636,393,621,477,592,533,540,582,486,507,534,435" href="#page7" alt="button3">
+          <area shape="poly" coords="473,515,391,537,314,513,256,591,323,624,396,635,473,620,529,593" href="#page5" alt="button4">
+          <area shape="poly" coords="161,325,254,355,254,435,302,505,246,584,192,530,161,468,150,395" href="#page13" alt="button5">
+        </map>
+
+		<img class="element element_1_2" src="images/page1/tyb.png"  />
+       
+    </div> 
+</div> 
+
+<!-- **************** SECTION 1 **************** -->
+
+<div data-role="page" id="page2" class="page">
+	<div class="content">
+
+        <img class="element element_2_1" src="images/page2/tab.png" />
+        <img class="element element_2_2" src="images/page2/references.png" />
+        <a class="element element_2_3 arrow-right" href="index.html#page3" data-transition="slide"><img src="images/arrow-right.png" /></a>
+
+    </div> 
+</div> 
+
+<div data-role="page" id="page3" class="page">
+	<div class="content">
+    
+    
+       <div class="element element_3_1">
+         <a href="#page4">
+           <div class=" panel circle">
+                <div class="front">
+                        <img src="images/page3/fluey.png" />
+                </div>
+                <div class="back">
+                        <!--
+                        <img src="images/page3/fluey-yes.png" />
+                        -->
+                </div>
+            </div>
+              </a>
+        </div>
+
+       <div class="element element_3_2">
+            <a href="#page4" class="element_3_2-a">
+               <div class=" panel circle"> <!--click -->
+                    <div class="front">
+                            <img src="images/page3/head-cold.png" />
+                    </div>
+                    <div class="back">
+                      <!--
+
+                            <img src="images/page3/head-cold-yes.png" />
+                            -->
+                    </div>
+                </div>
+            </a>
+        </div>
+       <div class="element element_3_3">
+       <a href="#page4">
+           <div class=" panel circle">
+                <div class="front">
+                        <img src="images/page3/throaty-cold.png" />
+                </div>
+                <div class="back">
+                  <!--
+                        <img src="images/page3/throaty-cold-yes.png" />
+                        -->
+                </div>
+            </div>
+              </a>
+        </div>
+       <div class="element element_3_4">
+       <a href="#page4">
+           <div class=" panel circle">
+                <div class="front">
+                        <img src="images/page3/chesty-cold.png" />
+                </div>
+                <div class="back">
+                  <!--
+                        <img src="images/page3/chesty-cold-yes.png" />
+                        -->
+                </div>
+            </div>
+              </a>
+        </div>
+
+        <img class="element element_3_5 animated bounceInDown delay_125s" src="images/page3/tab.png" />
+
+        <div class="element element_3_6 bounceInDown animated hidden">
+            <!--
+            <img src="images/page3/tab-2.png" />
+            -->
+            <a href="#" class="element element_3_6-close"></a>
+            <a href="#page4" class="element element_3_6-learnmore"></a>
+        </div>
+       
+    </div> 
+</div> 
+
+<div data-role="page" id="page4" class="page">
+	<div class="content">
+
+        <div class="section-button element element_4_1 bounceInLeft delay_025s">
+        <img src="images/page4/fluey.png" /></div>
+
+        <div class="section-button element element_4_2 bounceInLeft delay_025s faded">
+        <img  src="images/page4/head.png" /></div>
+
+        <div class="section-button element element_4_3 bounceInLeft delay_025s faded"><img src="images/page4/throaty.png" /></div>
+
+        <div class="section-button element element_4_4 bounceInLeft delay_025s faded"><img src="images/page4/chesty.png" /></div>
+
+        
+		<div class="section-container fluey-container hidden ">
+            <img class="element element_4_5  bounceInDown delay_05s" src="images/page4/fluey-tab.png" />
+           <a href="#page5"> 
+            <img class="element element_4_6  bounceInRight delay_075s" src="images/page4/fluey-icon.png" />
+           </a> 
+            <img class="element element_4_7  bounceInRight delay_1s" src="images/page4/fluey-torso.png" />
+        </div> 
+        
+		<div class="section-container head-container hidden ">
+            <img class="element element_4_5  bounceInDown delay_05s" src="images/page4/head-tab.png" />
+			<a href="#page6"> 
+            <img class="element element_4_6  bounceInRight delay_075s" src="images/page4/head-icon.png" />
+			</a>
+            <img class="element element_4_7  bounceInRight delay_1s" src="images/page4/head-torso.png" />
+            <a href="#" class="element head_popup_button"></a>
+        </div> 
+       
+		<div class="section-container throaty-container hidden ">
+            <img class="element element_4_5  bounceInDown delay_05s" src="images/page4/throaty-tab.png" />
+            <a href="#page13"> 
+            <img class="element element_4_6  bounceInRight delay_075s" src="images/page4/throaty-icon.png" />
+            </a>
+            <img class="element element_4_7  bounceInRight delay_1s" src="images/page4/throaty-torso.png" />
+        </div> 
+
+		<div class="section-container chesty-container hidden ">
+            <img class="element element_4_5  bounceInDown delay_05s" src="images/page4/chesty-tab.png" />
+            <a href="#page7">
+            <img class="element element_4_6  bounceInRight delay_075s" src="images/page4/chesty-icon.png" />
+            </a>
+            <img class="element element_4_7  bounceInRight delay_1s" src="images/page4/chesty-torso.png" />
+        </div> 
+
+    </div> 
+</div> 
+
+<!-- **************** SECTION 2 **************** -->
+
+
+
+<!-- **************** SECTION 3 **************** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- **************** ************************* **************** 
+   _____ ____  _      _____             ______ _     _    _ ______ 
+  / ____/ __ \| |    |  __ \    ___    |  ____| |   | |  | |  ____|
+ | |   | |  | | |    | |  | |  ( _ )   | |__  | |   | |  | | |__   
+ | |   | |  | | |    | |  | |  / _ \/\ |  __| | |   | |  | |  __|  
+ | |___| |__| | |____| |__| | | (_>    | |    | |___| |__| | |____ 
+  \_____\____/|______|_____/   \___/\/ |_|    |______\____/|______|
+                                                                   
+ -->
+<div data-role="page" id="page5" class="page">
+	<div class="content">
+
+        <a class="element plus product2_view1_button1  bounceInLeft delay_075s" href="#"><img src="images/plus.png" /></a>
+
+        <a class="element plus product2_view1_button2 page5_popup_2_promo  bounceInLeft delay_075s" href="#"></a>
+
+        <div class="pi-button"><img class="" src="images/pi.png" /></div>
+
+    </div> 
+</div> 
+<!-- **************** ************************* **************** -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- **************** ************************* **************** 
+   _____ ____  _    _  _____ _    _    ____  _____  _____ _____ _____ _   _          _      
+  / ____/ __ \| |  | |/ ____| |  | |  / __ \|  __ \|_   _/ ____|_   _| \ | |   /\   | |     
+ | |   | |  | | |  | | |  __| |__| | | |  | | |__) | | || |  __  | | |  \| |  /  \  | |     
+ | |   | |  | | |  | | | |_ |  __  | | |  | |  _  /  | || | |_ | | | | . ` | / /\ \ | |     
+ | |___| |__| | |__| | |__| | |  | | | |__| | | \ \ _| || |__| |_| |_| |\  |/ ____ \| |____ 
+  \_____\____/ \____/ \_____|_|  |_|  \____/|_|  \_\_____\_____|_____|_| \_/_/    \_\______|
+                                                                                                                                                         
+ -->
+<div data-role="page" id="page7" class="page">
+	<div class="content">
+ 		<!-- *********** -->
+ 		<a class="element plus product1_view1_button2  bounceInLeft delay_075s" href="#">
+ 			<img src="images/plus.png" />
+ 		</a>
+ 		<!-- *********** -->
+        <a class="element plus product1_view1_button1  bounceInLeft delay_05s" 
+        href="#page7-1" data-transition="slide"></a>
+		<!-- *********** -->
+		<div class="pi-button"><img class="" src="images/pi.png" /></div>
+    </div> 
+</div> 
+<div data-role="page" id="page7-1" class="page">
+	<div class="content">
+ 		<!-- *********** -->
+ 		<a class="element plus product1_view2_button_return  bounceInLeft delay_075s" 
+ 		href="#page7" data-transition="slide" data-direction="reverse" data-back="true">
+ 		</a>
+ 		<!-- *********** -->
+ 		<a class="element plus product1_view2_button_popup1  bounceInLeft delay_075s" 
+ 		href="#">
+ 		</a>
+ 		<!-- *********** -->
+		<div class="pi-button"><img class="" src="images/pi.png" /></div>
+    </div> 
+</div> 
+<!-- **************** ************************* **************** -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- **************** ************************* **************** 
+  _________     _______   ____ ____________ _______ _____ 
+ |__   __\ \   / /  __ \ / __ \___  /  ____|__   __/ ____|
+    | |   \ \_/ /| |__) | |  | | / /| |__     | | | (___  
+    | |    \   / |  _  /| |  | |/ / |  __|    | |  \___ \ 
+    | |     | |  | | \ \| |__| / /__| |____   | |  ____) |
+    |_|     |_|  |_|  \_\\____/_____|______|  |_| |_____/                                                                                                                                            
+ -->
+<div data-role="page" id="page13" class="page">
+	<div class="content">
+
+        <a class="element plus product3_view1_button1 bounceInLeft delay_05s" 
+        href="#"></a>
+        <a class="element plus product3_view1_button2 bounceInLeft delay_05s" 
+        href="#page14" data-transition="slide"></a>
+        <div class="pi-button"><img class="" src="images/pi.png" /></div>
+    </div> 
+</div> 
+<div data-role="page" id="page14" class="page">
+	<div class="content">
+
+        <a class="element plus product3_view2_button_return bounceInUp delay_075s" href="#page13"
+        data-transition="slide" data-direction="reverse" data-back="true"
+        ></a>
+        <!--
+        <a class="element element_14_5 arrow-right bounceInRight delay_125s" href="index.html#page15" data-transition="slide"><img src="images/arrow-right.png" /></a>
+-->
+        <div class="pi-button"><img class="" src="images/pi.png" /></div>
+
+    </div> 
+</div> 
+
+
+
+
+
+
+
+
+
+<!-- **************** ************************* **************** 
+   _____ _____ _   _ _    _ _______       ____  
+  / ____|_   _| \ | | |  | |__   __|/\   |  _ \ 
+ | (___   | | |  \| | |  | |  | |  /  \  | |_) |
+  \___ \  | | | . ` | |  | |  | | / /\ \ |  _ < 
+  ____) |_| |_| |\  | |__| |  | |/ ____ \| |_) |
+ |_____/|_____|_| \_|\____/   |_/_/    \_\____/ 
+                                                
+                                                
+ -->
+<div data-role="page" id="page6" class="page">
+	<div class="content">
+	
+	<a class="element plus product4_view1_button1  bounceInLeft delay_125s" href="#"><img src="images/plus.png" /></a>
+	<a class="element plus product4_view1_button2  bounceInLeft delay_125s" href="#page8"
+	 data-transition="slide"></a>
+
+     <div class="pi-button"><img class="" src="images/pi.png" /></div>
+
+    </div> 
+</div> 
+<div data-role="page" id="page8" class="page">
+	<div class="content">
+
+ 		<a class="element plus product4_view2_button_return bounceInUp delay_075s" href="#page6"
+        data-transition="slide" data-direction="reverse" data-back="true"
+        ></a>
+        <a class="element plus product4_view2_button1  bounceInLeft delay_125s" href="#"></a>
+        <a class="element plus product4_view2_button2  bounceInLeft delay_125s" href="#"></a>
+        <div class="pi-button"><img class="" src="images/pi.png" /></div>
+
+    </div> 
+</div> 
+<!-- **************** ************************* **************** -->
+<!-- **************** ************************* **************** -->
+<!-- **************** ************************* **************** -->
+<!-- **************** ************************* **************** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div data-role="page" id="page9" class="page">
+	<div class="content">
+
+        <a class="element element_9_6 arrow-left  bounceInLeft delay_125s" href="index.html#page12" data-transition="slide" data-direction="reverse"><img src="images/arrow-left.png" /></a>
+
+        <a class="element plus page9_popup_1_button  bounceInUp delay_075s" href="#"><img src="images/plus.png" /></a>
+
+        <a class="element element_9_5 arrow-right  bounceInRight delay_125s" href="index.html#page10" data-transition="slide"><img src="images/arrow-right.png" /></a>
+
+        <div class="pi-button"><img class="" src="images/pi.png" /></div>
+
+    </div> 
+</div> 
+
+<div data-role="page" id="page10" class="page">
+	<div class="content">
+
+        <a class="element element_10_7 arrow-left  bounceInLeft delay_125s" href="index.html#page9" data-transition="slide" data-direction="reverse"><img src="images/arrow-left.png" /></a>
+
+        <a class="element plus page10_popup_1_button  bounceInUp delay_075s" href="#"><img src="images/plus.png" /></a>
+        
+        <a class="element element_10_5 arrow-right  bounceInRight delay_125s" href="index.html#page11" data-transition="slide"><img src="images/arrow-right.png" /></a>
+
+        <div class="pi-button"><img class="" src="images/pi.png" /></div>
+
+    </div> 
+</div> 
+
+<div data-role="page" id="page11" class="page">
+	<div class="content">
+
+        <a class="element element_11_7 arrow-left  bounceInLeft delay_125s" href="index.html#page10" data-transition="slide" data-direction="reverse"><img src="images/arrow-left.png" /></a>
+
+        <a class="element plus page11_popup_1_button  bounceInUp delay_075s" href="#"><img src="images/plus.png" /></a>
+        
+        <a class="element element_11_5 arrow-right  bounceInRight delay_125s" href="index.html#page12" data-transition="slide"><img src="images/arrow-right.png" /></a>
+
+        <div class="pi-button"><img class="" src="images/pi.png" /></div>
+
+    </div> 
+</div> 
+
+<div data-role="page" id="page12" class="page">
+	<div class="content">
+
+        <a class="element element_11_7 arrow-left  bounceInLeft delay_125s" href="index.html#page11" data-transition="slide" data-direction="reverse"><img src="images/arrow-left.png" /></a>
+
+        <a class="element plus page12_popup_1_button  bounceInUp delay_075s" href="#"><img src="images/plus.png" /></a>
+
+        <a class="element element_12_8 arrow-right  bounceInRight delay_125s" href="index.html#page9" data-transition="slide"><img src="images/arrow-right.png" /></a>
+
+        <div class="pi-button"><img class="" src="images/pi.png" /></div>
+
+    </div> 
+</div> 
+
+<!-- **************** SECTION 5 **************** -->
+
+
+
+
+
+<div data-role="page" id="page15" class="page">
+	<div class="content">
+
+        <a class="element element_15_6 arrow-left bounceInLeft delay_125s" href="index.html#page14" data-transition="slide" data-direction="reverse"><img src="images/arrow-left.png" /></a>
+
+        <a class="element plus page15_popup_1_button bounceInUp delay_075s" href="#"><img src="images/plus.png" /></a>
+
+        <div class="pi-button"><img class="" src="images/pi.png" /></div>
+
+    </div> 
+</div> 
+
+<!-- **************** MISC **************** -->
+
+<div data-role="page" id="page16" class="page">
+	<div class="content">
+
+        <img class="element element_16_1" src="images/range.png" />
+        
+        <a href="#" class="pi_button_range pi_popup_1_open"></a>
+        <a href="#" class="pi_button_range pi_popup_2_open"></a>
+        <a href="#" class="pi_button_range pi_popup_3_open"></a>
+        <a href="#" class="pi_button_range pi_popup_4_open"></a>
+        <!--
+        <a href="#" class="pi_button_range pi_popup_5_open"></a>
+        <a href="#" class="pi_button_range pi_popup_6_open"></a>
+        <a href="#" class="pi_button_range pi_popup_7_open"></a>
+        -->
+    </div> 
+</div> 
+
+<div data-role="page" id="page17" class="page">
+	<div class="content">
+
+
+    </div> 
+</div> 
+
+<!-- **************** POPUPS **************** -->
+ 
+<div class="popup head_popup"><a href="#" class="head_popup_close popup_close"></a></div>
+
+
+
+
+
+
+
+
+<!-- COLD & FLU -->
+<div class="popup product2_view1_popup1">
+	<a href="#" class="product2_view1_popup1_close popup_close"></a>
+</div>
+<div class="popup product2_view1_popup2">
+	<a href="#" class="product2_view1_popup2_close popup_close"></a>
+</div>
+
+
+<!-- SINUTAB -->
+<div class="popup product4_view1_popup1">
+	<a href="#" class="product4_view1_button_popup1_close popup_close"></a>
+</div>
+<div class="popup product4_view2_popup1">
+	<a href="#" class="product4_view2_button_popup1_close popup_close"></a>
+</div>
+<div class="popup product4_view2_popup2">
+	<a href="#" class="product4_view2_button_popup2_close popup_close"></a>
+</div>
+
+<!-- TYROZETS -->
+<div class="popup product3_view1_popup1">
+	<a href="#" class="product3_view1_button_popup1_close popup_close"></a>
+</div>
+
+<!-- COUGH ORIGINAL -->
+<div class="popup product1_view1_popup1">
+	<a href="#" class="product1_view1_button_popup1_close popup_close"></a>
+</div>
+<div class="popup product1_view2_popup1">
+	<a href="#" class="product1_view2_button_popup1_close popup_close"></a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="popup page5_popup_3"><a href="#" class="page5_popup_3_close popup_close"></a></div>
+
+<div class="popup page6_popup_1"><a href="#" class="page6_popup_1_close popup_close"></a><a href="#" class="element page6_popup_media_button"></a></div>
+<div class="popup page6_popup_2"><a href="#" class="page6_popup_2_close popup_close"></a><a href="#" class="element page6_popup_media_button"></a></div>
+<div class="popup page6_popup_media"><a href="#" class="page6_popup_media_close popup_close"></a><a href="#" class="element page6_popup_materials_button"></a></div>
+<div class="popup page6_popup_materials"><a href="#" class="page6_popup_materials_close popup_close"></a></div>
+
+<div class="popup page8_popup_1"><a href="#" class="page8_popup_1_close popup_close"></a></div>
+
+<div class="popup page9_popup_1"><a href="#" class="page9_popup_1_close popup_close"></a></div>
+
+<div class="popup page10_popup_1"><a href="#" class="page10_popup_1_close popup_close"></a></div>
+
+<div class="popup page11_popup_1"><a href="#" class="page11_popup_1_close popup_close"></a></div>
+
+<div class="popup page12_popup_1"><a href="#" class="page12_popup_1_close popup_close"></a></div>
+
+<div class="popup page14_popup_1"><a href="#" class="page14_popup_1_close popup_close"></a></div>
+
+<div class="popup page15_popup_1"><a href="#" class="page15_popup_1_close popup_close"></a></div>
+
+<div class="popup pi_popup pi_popup_1"><a href="#" class="pi_popup_close popup_close"></a>
+	<a href="#" class="pi_popup_prev pi_popup_prev_1"><img class="" src="images/arrow-left.png" /></a>
+	<a href="#" class="pi_popup_next pi_popup_next_1"><img class="" src="images/arrow-right.png" /></a>
+</div>
+<div class="popup pi_popup pi_popup_2"><a href="#" class="pi_popup_close popup_close"></a>
+	<a href="#" class="pi_popup_prev pi_popup_prev_2"><img class="" src="images/arrow-left.png" /></a>
+	<a href="#" class="pi_popup_next pi_popup_next_2"><img class="" src="images/arrow-right.png" /></a>
+</div>
+<div class="popup pi_popup pi_popup_3"><a href="#" class="pi_popup_close popup_close"></a>
+	<a href="#" class="pi_popup_prev pi_popup_prev_3"><img class="" src="images/arrow-left.png" /></a>
+	<a href="#" class="pi_popup_next pi_popup_next_3"><img class="" src="images/arrow-right.png" /></a>
+</div>
+<div class="popup pi_popup pi_popup_4"><a href="#" class="pi_popup_close popup_close"></a>
+	<a href="#" class="pi_popup_prev pi_popup_prev_4"><img class="" src="images/arrow-left.png" /></a>
+	<a href="#" class="pi_popup_next pi_popup_next_4"><img class="" src="images/arrow-right.png" /></a>
+</div>
+
+<!--
+<div class="popup pi_popup pi_popup_5"><a href="#" class="pi_popup_close popup_close"></a>
+	<a href="#" class="pi_popup_prev pi_popup_prev_5"><img class="" src="images/arrow-left.png" /></a>
+	<a href="#" class="pi_popup_next pi_popup_next_5"><img class="" src="images/arrow-right.png" /></a>
+</div>
+<div class="popup pi_popup pi_popup_6"><a href="#" class="pi_popup_close popup_close"></a>
+	<a href="#" class="pi_popup_prev pi_popup_prev_6"><img class="" src="images/arrow-left.png" /></a>
+	<a href="#" class="pi_popup_next pi_popup_next_6"><img class="" src="images/arrow-right.png" /></a>
+</div>
+<div class="popup pi_popup pi_popup_7"><a href="#" class="pi_popup_close popup_close"></a>
+	<a href="#" class="pi_popup_prev pi_popup_prev_7"><img class="" src="images/arrow-left.png" /></a>
+	<a href="#" class="pi_popup_next pi_popup_next_7"><img class="" src="images/arrow-right.png" /></a>
+</div>
+-->
+
+<!-- **************** CORE ELEMENTS **************** -->
+
+<div class="logo"><img class="" src="images/logo.png" /></div>
+<div class="menu-button menu-open-button"><img class="" src="images/menu.png" /></div>
+<a rel="external" href="#page1"><div class="home-button"><img class="" src="images/home.png" /></div></a>
+<a rel="external" href="#page16"><div class="range-button"><img class="" src="images/range-guide.png" /></div></a>
+<a rel="external" href="#page17"><div class="ai-button"><img class="" src="images/ai.png" /></div></a>
+
+<!-- **************** SLIDE IN MENU **************** -->
+
+<div class="menu-overlay">
+    <a href="#" class="menu-close-button"><p>Table of contents</p><img src="images/close.png" width="46" height="46" alt=""/></a>
+    <div class="menu-links">
+        <a class="menu-link" rel="external" href="#page2"><img class="menu-thumbnail" src="images/thumbs/1.png" alt=""/></a>
+        <a class="menu-link" rel="external" href="#page5"><img class="menu-thumbnail" src="images/thumbs/2.png" alt=""/></a>
+        <a class="menu-link" rel="external" href="#page6"><img class="menu-thumbnail" src="images/thumbs/3.png" alt=""/></a>
+        <a class="menu-link" rel="external" href="#page7"><img class="menu-thumbnail" src="images/thumbs/4.png" alt=""/></a>
+        <a class="menu-link" rel="external" href="#page13"><img class="menu-thumbnail" src="images/thumbs/5.png" alt=""/></a>
+    </div>
+</div>
+
+<!-- **************** OVERLAY FOR POPUPS **************** -->
+
+<div id="overlay"></div>
+
+
+<!-- **************** PRELOADER **************** -->
+
+<div id="preloader_container">
+    <img src="images/bg_1.jpg" /> 
+    <img src="images/bg_2.jpg" /> 
+    <img src="images/bg_3.jpg" /> 
+
+    <!--
+    COLD & FLUE
+    -->
+    <img src="images/product_cold_and_flu/features_popup2.png" /> 
+    <img src="images/product_cold_and_flu/features_popup1.png" /> 
+    
+    <!--
+    COUGH ORIGINAL
+    -->
+    <img src="images/product_cough-original/home.jpg" /> 
+    <img src="images/product_cough-original/detail.jpg" /> 
+
+    <!--
+    TYROZETS
+    -->
+    <img src="images/product_tyzorets/home.jpg" /> 
+  	<img src="images/product_tyzorets/did_you_know.jpg" /> 
+
+    <!--
+    SINUTAB
+    -->
+	<img src="images/product_sinutab/home.jpg" /> 
+
+	<!--
+    <img src="images/page-9.jpg" /> 
+    <img src="images/page-10.jpg" /> 
+    <img src="images/page-11.jpg" /> 
+    <img src="images/page-12.jpg" /> 
+    <img src="images/page-15.jpg" /> 
+    <img src="images/page-17.jpg" /> 
+    -->
+</div> 
+</body>
+</html>
