@@ -173,6 +173,11 @@ $(".pi_popup_next_4").bind("tap",function(){ $(".pi_popup_4").removeClass("popup
 
 
 
+	//HOME
+	$(".home_view1_button1, .home_view1_button_popup1_close").bind("tap",function(){ 
+		$(".home_view1_popup1").toggleClass("popup_down"); 
+		$("#overlay").toggleClass("show"); return false; 
+	});
 
 	//CHESTY -> HOME POPUP
 	$(".product1_view1_button2, .product1_view1_button_popup1_close").bind("tap",function(){ 
