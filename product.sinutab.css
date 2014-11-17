@@ -12,9 +12,27 @@
     height: 60px;
 }
 
+.page4_sinutab_references{
+    display: none;
+}
+
+.product4_view2_popup1_reference_link{
+
+    /* background: rgba(0,0,0,.5); */
+    
+    
+
+    left: 108px;
+    width: 700px;
+    height: 26px;
+    
+
+    top: 616px;
+}
+
 .product4_view2_button1{
-    left: 360px;
-    top: 460px;
+    left: 760px;
+    top: 420px;
     width: 190px;
     height: 90px;
     /* background: aquamarine; */
@@ -45,6 +63,6 @@
 }
 
 .product4_view2_popup2{
-    background-image:url("images/product_sinutab/details_picture_popup.png"); 
+    /*background-image:url("images/product_sinutab/details_picture_popup.png"); */
     background-size:1024px 704px;
 }

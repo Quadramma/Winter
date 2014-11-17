@@ -106,6 +106,7 @@ $(".pi_popup_next_4").bind("tap",function(){ $(".pi_popup_4").removeClass("popup
 
  	function page4_element4_1_tap(){
  		$(".fluey-container").show();
+ 		$(".page4_sinutab_references").toggle(false);
 		$(".section-container").not(".fluey-container").hide();
 		$self = $(".element_4_1");
 		$self.children("img").css("opacity",1);
@@ -113,6 +114,7 @@ $(".pi_popup_next_4").bind("tap",function(){ $(".pi_popup_4").removeClass("popup
  	}
  	function page4_element4_2_tap(){
 		$(".head-container").show();
+		$(".page4_sinutab_references").toggle(true);
 		$(".section-container").not(".head-container").hide();
 		$self = $(".element_4_2");
 		$self.children("img").css("opacity",1);
@@ -120,6 +122,7 @@ $(".pi_popup_next_4").bind("tap",function(){ $(".pi_popup_4").removeClass("popup
 	}
  	function page4_element4_3_tap(){
 		$(".throaty-container").show();
+		$(".page4_sinutab_references").toggle(false);
 		$(".section-container").not(".throaty-container").hide();
 		$self = $(".element_4_3");
 		$self.children("img").css("opacity",1);
@@ -127,6 +130,7 @@ $(".pi_popup_next_4").bind("tap",function(){ $(".pi_popup_4").removeClass("popup
 	}
 	function page4_element4_4_tap(){
 		$(".chesty-container").show();
+		$(".page4_sinutab_references").toggle(false);
 		$(".section-container").not(".chesty-container").hide();
 		$self = $(".element_4_4");
 		$self.children("img").css("opacity",1);
@@ -180,7 +184,7 @@ $(".pi_popup_next_4").bind("tap",function(){ $(".pi_popup_4").removeClass("popup
 	});
 
 	//CHESTY -> HOME POPUP
-	$(".product1_view1_button2, .product1_view1_button_popup1_close").bind("tap",function(){ 
+	$(".product1_view1_button2,.product1_view1_button1, .product1_view1_button_popup1_close").bind("tap",function(){ 
 		$(".product1_view1_popup1").toggleClass("popup_down"); 
 		$("#overlay").toggleClass("show"); return false; 
 	});
@@ -192,7 +196,7 @@ $(".pi_popup_next_4").bind("tap",function(){ $(".pi_popup_4").removeClass("popup
 	});
 
 	//COLD & FLU FEATURES 1
-	$(".product2_view1_button1, .product2_view1_popup1_close").bind("tap",function(){ 
+	$(".product2_view1_button1,.product2_view1_button3, .product2_view1_popup1_close").bind("tap",function(){ 
 		$(".product2_view1_popup1").toggleClass("popup_down"); 
 		$("#overlay").toggleClass("show"); return false; 
 	});
@@ -210,14 +214,16 @@ $(".pi_popup_next_4").bind("tap",function(){ $(".pi_popup_4").removeClass("popup
 	});
 
 	//SINUTAB
-	$(".product4_view1_button1, .product4_view1_button_popup1_close").bind("tap",function(){ 
+	$(".product4_view1_button2, .product4_view1_button_popup1_close").bind("tap",function(){ 
 		$(".product4_view1_popup1").toggleClass("popup_down"); 
 		$("#overlay").toggleClass("show"); return false; 
 	});
-	$(".product4_view2_button1, .product4_view2_button_popup1_close").bind("tap",function(){ 
+	/*
+	$(".product4_view1_button2, .product4_view2_button_popup1_close").bind("tap",function(){ 
 		$(".product4_view2_popup1").toggleClass("popup_down"); 
 		$("#overlay").toggleClass("show"); return false; 
 	});
+*/
 	$(".product4_view2_button2, .product4_view2_button_popup2_close").bind("tap",function(){ 
 		$(".product4_view2_popup2").toggleClass("popup_down"); 
 		$("#overlay").toggleClass("show"); return false; 

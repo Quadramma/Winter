@@ -8,15 +8,54 @@
     #Preloader
 */
 
+#spinnerMap{
+    /* position: relative; */
+    /* left: -200px; */
+}
+
+.spinner-winter_ailments{
+    width: 170px;
+    height: 139px;
+    left: 337px;
+    /* background: rgba(0,0,0,0.5); */
+    top: 60px;
+}
+.spinner-sinutab{
+    width: 170px;  
+    height: 139px;  
+    left: 516px;  
+    /* background: rgba(0,0,0,0.5); */  top: 60px;
+}
+.spinner-winter_cough{
+    width: 115px;  
+    height: 173px;  
+    left: 591px;  
+    /* background: rgba(0,0,0,0.5); */  
+    top: 206px;
+}
+.spinner-winter_flue{
+    width: 182px;  
+    height: 89px;  
+    left: 422px;  
+    /* background: rgba(0,0,0,0.5); */  
+    top: 343px;
+}
+.spinner-winter_tyzoret{
+    width: 115px;  height: 173px;  
+    left: 319px;  
+    /* background: rgba(0,0,0,0.5); */  top: 206px;
+}
+
 * {
-    -webkit-user-select: none;
+    -webkit-user-select: none; 
     -khtml-user-select: none;
     -moz-user-select: -moz-none;
     -o-user-select: none;
     user-select: none;
-     -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; 
+     
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; 
     -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
-    outline: none !important;
+     outline: none !important;
 }
 
 
@@ -234,7 +273,7 @@ body .ui-content { font-size:1.5em; border-radius:0; }
 .range-button { 
 	position:absolute;
 	top: 581px;
-	left: 816px;
+	left: 907px;
 	z-index:1;
 	display:block;
 	overflow:hidden;
@@ -256,7 +295,7 @@ body .ui-content { font-size:1.5em; border-radius:0; }
 .pi-button { 
 	position:absolute;
 	top: 581px;
-	left: 733px;
+	left: 815px;
 	z-index:1;
 	display:block;
 	overflow:hidden;
@@ -641,7 +680,7 @@ body .ui-content { font-size:1.5em; border-radius:0; }
 
 
 	.home_view1_popup1 { 
-		background-image:url("images/promotional_materials_popup.png"); 
+		/*background-image:url("images/promotional_materials_popup.png"); */
 		background-size:1024px 704px; 
 	}
 

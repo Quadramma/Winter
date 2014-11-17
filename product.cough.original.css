@@ -18,6 +18,21 @@
     height: 140px;
 }
 
+.product1_view1_popup1_reference_link{
+       /* background: rgba(0,0,0,.5); */ 
+    
+    
+
+    left: 108px;
+    width: 700px;
+    
+       height: 33px;
+    
+
+    
+       top: 601px;
+}
+
 	.product1_view2_popup1 { 
 		background-image:url("images/product_cough-original/detail_popup.png"); 
 		background-size:1024px 704px;
